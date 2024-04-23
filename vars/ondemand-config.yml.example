@@ -11,8 +11,8 @@ clouds_yaml_local_location: ~/.config/openstack/clouds.yaml
 cluster_rdc_project: NeSI-Training-Test
 
 # number of users
-num_users_create: 6
-num_trainers_create: 3
+num_users_create: 2
+num_trainers_create: 1
 
 # authentication settings
 oidc_uri: "/oidc"
@@ -83,31 +83,31 @@ ood_apps:
     k8s_container: ghcr.io/nesi/training-environment-jupyter-ml101-app:v0.2.2
     repo: https://github.com/nesi/training-environment-jupyter-ml101-app.git
     version: 'v0.2.2'
-    enabled: true
+    enabled: false
 
   jupyter_ml102:
     k8s_container: ghcr.io/nesi/training-environment-jupyter-ml102-app:v0.2.0
     repo: https://github.com/nesi/training-environment-jupyter-ml102-app.git
     version: 'v0.2.0'
-    enabled: true
+    enabled: false
 
   rstudio_rnaseq:
     k8s_container: ghcr.io/nesi/training-environment-rstudio-rnaseq-app:v0.2.2
     repo: https://github.com/nesi/training-environment-rstudio-rnaseq-app.git
     version: 'v0.2.2'
-    enabled: true
+    enabled: false
 
   rstudio:
     k8s_container: ghcr.io/nesi/training-environment-rstudio-app:v0.3.0
     repo: https://github.com/nesi/training-environment-rstudio-app.git
     version: 'v0.3.0'
-    enabled: true
+    enabled: false
 
   shell4b:
     k8s_container: ghcr.io/nesi/training-environment-jupyter-intermediate-shell-app:v0.3.3
     repo: https://github.com/nesi/training-environment-jupyter-intermediate-shell-app.git
     version: 'v0.3.3'
-    enabled: true
+    enabled: false
 
   containers:
     k8s_container: ghcr.io/nesi/training-environment-jupyter-containers-app:v0.1.0
@@ -117,11 +117,11 @@ ood_apps:
 
 # this is currently required for containers app to run properly (fakeroot)
 # Note: you should probably set to false unless you are running a containers workshop
-enable_privileged_pods: false
+enable_privileged_pods: true
 
 # pull the images defined in ood_apps onto all k8s worker nodes
 # Note: make sure the worker nodes have enough disk space (especially if many apps are enabled)
-enable_pod_pre_pull: false
+enable_pod_pre_pull: true
 
 # HTTPS LetsEncrypt Settings
 
