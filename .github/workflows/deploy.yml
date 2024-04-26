@@ -23,12 +23,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.6.3"
+          terraform_version: "1.8.2"
           terraform_wrapper: false
       - run: python --version
       
       # pin ansible version to 2.15, there seems to be an issue related to debconf with 2.16, need to investigate
-      - run: pipx install --force ansible-core==2.15.7
+      - run: pipx install --force ansible-core==2.16.6
       - run: ansible-playbook --version
 
       - name: Write private key file
